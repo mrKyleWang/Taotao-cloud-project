@@ -1,0 +1,27 @@
+server:
+  port: 9003
+  context-path: /fore
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+  jackson:
+    default-property-inclusion: non_null
+  devtools:
+    restart:
+      enabled: true
+  data:
+    redis:
+      repositories:
+        enabled: true
+  freemarker:
+    cache: true
+    charset: UTF-8
+    content-type: text/html
+    template-loader-path: classpath:/templates/
+  activemq:
+     broker-url: tcp://localhost:61616
+     user: admin
+     password: admin
+     in-memory: true
