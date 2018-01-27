@@ -12,7 +12,17 @@
 
 
     <dependencies>
-
-
+        <dependency>
+            <groupId>top.kylewang.taotao</groupId>
+            <artifactId>taotao-manager-pojo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--mybatis-starter-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
     </dependencies>
+
 </project>
