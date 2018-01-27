@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: eureka
+
+server:
+  port: 9009
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://user:password@localhost:9009/eureka/
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: password
