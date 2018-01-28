@@ -1,7 +1,9 @@
 package top.kylewang.taotao.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import top.kylewang.taotao.common.pojo.EasyUIDataGridResult;
 import top.kylewang.taotao.common.pojo.TaotaoResult;
@@ -38,7 +40,7 @@ public class ItemController {
      * @return
      */
     @RequestMapping("/item/save")
-    public TaotaoResult addItem(TbItem item, String desc) {
+    public TaotaoResult addItem(@RequestBody TbItem item, @RequestParam("desc") String desc){
         return itemService.addItem(item, desc);
     }
 
@@ -47,6 +49,7 @@ public class ItemController {
      * @param itemId
      * @return
      */
+    @RequestMapping("/item/getItemById")
     public TbItem getItemById(long itemId) {
         return itemService.getItemById(itemId);
     }
@@ -56,6 +59,7 @@ public class ItemController {
      * @param itemId
      * @return
      */
+    @RequestMapping("/item/getItemDescById")
     public TbItemDesc getItemDescById(long itemId) {
         return itemService.getItemDescById(itemId);
     }

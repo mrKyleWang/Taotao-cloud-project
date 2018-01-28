@@ -1,7 +1,7 @@
 package top.kylewang.taotao.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import top.kylewang.taotao.common.pojo.EasyUITreeNode;
 import top.kylewang.taotao.service.ItemCatService;
@@ -23,8 +23,8 @@ public class ItemCatController {
      * @param parentId
      * @return
      */
-    @GetMapping("")
-    public List<EasyUITreeNode> getItemCatList(long parentId) {
+    @RequestMapping("/item/cat/list")
+    public List<EasyUITreeNode> getItemCatList(Long parentId) {
         return itemCatService.getItemCatList(parentId);
     }
 }

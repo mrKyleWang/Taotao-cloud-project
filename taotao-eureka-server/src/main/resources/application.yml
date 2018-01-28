@@ -1,12 +1,14 @@
 spring:
   application:
-    name: eureka
+    name: taotao-eureka
 
 server:
   port: 9009
 eureka:
   instance:
     hostname: localhost
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
   client:
     serviceUrl:
       defaultZone: http://user:password@localhost:9009/eureka/

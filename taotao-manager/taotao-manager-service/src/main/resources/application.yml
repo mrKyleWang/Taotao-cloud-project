@@ -5,6 +5,8 @@ REDIS_ITEM_KEY: REDIS_ITEM
 REDIS_ITEM_EXPIRE: 18000
 
 spring:
+  application:
+    name: taotao-manager-service
   #数据库连接
   datasource:
     # 使用druid数据源
@@ -28,4 +30,13 @@ spring:
 #mybaits配置
 mybatis:
   type-aliases-package: top.kylewang.taotao.pojo
-
+#eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password@localhost:9009/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
