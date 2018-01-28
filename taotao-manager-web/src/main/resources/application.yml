@@ -1,5 +1,32 @@
+#fastDFS
+tracker_server: 192.168.25.133:22122
+#图片服务器的url
+IMAGE_SERVER_URL: http://192.168.25.133/
+#manager-service服务name
+MANAGER_SERVICE_SERVER:
+
+
 server:
-  port: 9012
+  port: 9010
+spring:
+  application:
+    name: taotao-manager-web
+  http:
+    multipart:
+      max-file-size: 10MB
+  freemarker:
+    suffix: .html
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password@localhost:9009/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
 
 
 
