@@ -27,7 +27,7 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 	private TbContentCategoryMapper contentCategoryMapper;
 	
 	@Override
-	public List<EasyUITreeNode> getContentCatList(long parentId) {
+	public List<EasyUITreeNode> getContentCatList(Long parentId) {
 		//根据parentid查询子节点列表
 		TbContentCategoryExample example = new TbContentCategoryExample();
 		//设置查询条件
@@ -49,7 +49,7 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 	}
 
 	@Override
-	public TaotaoResult insertContentCat(long parentId, String name) {
+	public TaotaoResult insertContentCat(Long parentId, String name) {
 		//创建一个内容分类对象
 		TbContentCategory contentCategory = new TbContentCategory();
 		contentCategory.setName(name);

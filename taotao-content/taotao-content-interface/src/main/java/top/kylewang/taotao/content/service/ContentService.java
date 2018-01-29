@@ -8,5 +8,5 @@ import java.util.List;
 public interface ContentService {
 
 	TaotaoResult insertContent(TbContent content);
-	List<TbContent> getContentList(long cid);
+	List<TbContent> getContentList(Long cid);
 }
