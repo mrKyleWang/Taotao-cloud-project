@@ -7,13 +7,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>taotao-manager</artifactId>
+    <artifactId>taotao-content</artifactId>
     <packaging>pom</packaging>
+
     <modules>
-        <module>taotao-manager-pojo</module>
-        <module>taotao-manager-interface</module>
-        <module>taotao-manager-service</module>
-        <module>taotao-manager-dao</module>
+        <module>taotao-content-interface</module>
+        <module>taotao-content-service</module>
     </modules>
 
     <dependencies>

@@ -6,6 +6,7 @@
   <version>1.0-SNAPSHOT</version>
     <modules>
         <module>../taotao-eureka-server</module>
+      <module>../taotao-content</module>
     </modules>
     <packaging>pom</packaging>
   <description>淘淘商城父项目</description>
