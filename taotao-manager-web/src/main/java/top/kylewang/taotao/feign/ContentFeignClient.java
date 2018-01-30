@@ -26,12 +26,20 @@ public interface ContentFeignClient {
     /**
      * 列表查询
      * @param categoryId
+     * @return
+     */
+    @RequestMapping("/content/query/list")
+    EasyUIDataGridResult getContentList(@RequestParam("categoryId") Long categoryId);
+
+    /**
+     * 列表查询
+     * @param categoryId
      * @param page
      * @param rows
      * @return
      */
-    @RequestMapping("/content/query/list")
-    EasyUIDataGridResult getContentList(@RequestParam("categoryId")Long categoryId,@RequestParam("page") int page, @RequestParam("rows")int rows);
+    @RequestMapping("/content/query/pageData")
+    EasyUIDataGridResult getPageData(@RequestParam("categoryId") Long categoryId, @RequestParam("page") int page, @RequestParam("rows") int rows);
 
 
 }

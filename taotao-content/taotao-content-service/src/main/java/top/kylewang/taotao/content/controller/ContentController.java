@@ -36,14 +36,25 @@ public class ContentController{
 		return contentService.insertContent(content);
 	}
 
+
 	/**
 	 * 列表查询
+	 * @param categoryId
+	 * @return
+	 */
+	@RequestMapping("/content/query/list")
+	List<TbContent> getContentList(@RequestParam("categoryId") Long categoryId){
+		return contentService.getContentList(categoryId);
+	}
+
+	/**
+	 * 分页查询
 	 * @param categoryId
 	 * @param page
 	 * @param rows
 	 * @return
 	 */
-	@RequestMapping("/content/query/list")
+	@RequestMapping("/content/query/pageData")
 	EasyUIDataGridResult getContentList(@RequestParam("categoryId")Long categoryId, @RequestParam("page") int page, @RequestParam("rows")int rows){
 
 		List<TbContent> list = contentService.getContentList(categoryId);

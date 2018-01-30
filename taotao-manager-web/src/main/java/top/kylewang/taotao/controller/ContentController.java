@@ -28,10 +28,10 @@ public class ContentController {
 		return result;
 	}
 
-	@RequestMapping("/content/query/list")
+	@RequestMapping("/content/query/pageData")
 	@ResponseBody
-	EasyUIDataGridResult getContentList(Long categoryId, int page, int rows){
-		EasyUIDataGridResult result = contentFeignClient.getContentList(categoryId,page,rows);
+	EasyUIDataGridResult getPageData(Long categoryId, int page, int rows){
+		EasyUIDataGridResult result = contentFeignClient.getPageData(categoryId,page,rows);
 		return result;
 	}
 	
