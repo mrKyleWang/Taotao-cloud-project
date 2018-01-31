@@ -1,3 +1,5 @@
+#图片上传服务器url
+UPLOAD_URL: http://localhost:9010
 CONTENT_KEY: CONTENT_KEY
 
 server:

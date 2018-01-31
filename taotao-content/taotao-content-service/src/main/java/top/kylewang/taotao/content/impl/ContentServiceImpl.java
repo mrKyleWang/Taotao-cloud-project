@@ -29,6 +29,8 @@ public class ContentServiceImpl implements ContentService {
 	private TbContentMapper contentMapper;
 	@Autowired
 	private JedisClient jedisClient;
+	@Value("${UPLOAD_URL}")
+	private String UPLOAD_URL;
 	
 	@Value("${CONTENT_KEY}")
 	private String CONTENT_KEY;
@@ -38,6 +40,12 @@ public class ContentServiceImpl implements ContentService {
 		//补全pojo的属性
 		content.setCreated(new Date());
 		content.setUpdated(new Date());
+		if(StringUtils.isNotBlank(content.getPic())){
+			content.setPic(UPLOAD_URL+content.getPic());
+		}
+		if(StringUtils.isNotBlank(content.getPic2())){
+			content.setPic2(UPLOAD_URL+content.getPic2());
+		}
 		//向内容表插入数据
 		contentMapper.insert(content);
 		

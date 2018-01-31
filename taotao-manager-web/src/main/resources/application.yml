@@ -1,9 +1,5 @@
-#fastDFS
-tracker_server: 192.168.25.133:22122
-#图片服务器的url
-IMAGE_SERVER_URL: http://192.168.25.133/
-#manager-service服务name
-MANAGER_SERVICE_SERVER:
+#图片存储路径
+IMAGE_PATH: upload
 
 
 server:

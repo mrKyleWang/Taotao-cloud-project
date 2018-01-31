@@ -12,8 +12,8 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
  * 2018/1/23 0023 20:26
  */
 @SpringBootApplication
-@EnableEurekaClient
 @EnableFeignClients
+@EnableEurekaClient
 public class PortalWebApplication extends SpringBootServletInitializer {
 
     @Override
