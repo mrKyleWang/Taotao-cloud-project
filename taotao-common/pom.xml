@@ -27,6 +27,12 @@
             <version>${servlet-api.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!--elasticsearch-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-elasticsearch</artifactId>
+            <version>${elasticsearch.version}</version>
+        </dependency>
 
     </dependencies>
 </project>

@@ -1,14 +1,29 @@
 package top.kylewang.taotao.common.pojo;
 
-import java.io.Serializable;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldIndex;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import java.io.Serializable;
+@Document(indexName = "taotao",type = "item")
 public class SearchItem implements Serializable{
+
+	@Id
+	@Field(index = FieldIndex.not_analyzed,store = true,type = FieldType.Long)
 	private Long id;
+	@Field(index = FieldIndex.analyzed,store = true,type = FieldType.String)
 	private String title;
+	@Field(index = FieldIndex.analyzed,store = true,type = FieldType.String)
 	private String sell_point;
+	@Field(index = FieldIndex.not_analyzed,store = true,type = FieldType.String)
 	private Long price;
+	@Field(index = FieldIndex.not_analyzed,store = true,type = FieldType.String)
 	private String image;
+	@Field(index = FieldIndex.analyzed,store = true,type = FieldType.String)
 	private String category_name;
+	@Field(index = FieldIndex.analyzed,store = true,type = FieldType.String)
 	private String item_des;
 	public Long getId() {
 		return id;
