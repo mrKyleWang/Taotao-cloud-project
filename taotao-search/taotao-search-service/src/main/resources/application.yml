@@ -1,5 +1,5 @@
 server:
-  port: 9011
+  port: 9015
 
 REDIS_ITEM_KEY: REDIS_ITEM
 REDIS_ITEM_EXPIRE: 18000
