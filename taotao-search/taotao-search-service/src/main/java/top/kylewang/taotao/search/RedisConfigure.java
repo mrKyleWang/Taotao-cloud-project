@@ -3,8 +3,8 @@ package top.kylewang.taotao.search;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import redis.clients.jedis.JedisPool;
-import top.kylewang.taotao.jedis.JedisClient;
-import top.kylewang.taotao.jedis.JedisClientPool;
+import top.kylewang.taotao.search.jedis.JedisClient;
+import top.kylewang.taotao.search.jedis.JedisClientPool;
 
 /**
  * @author Kyle.Wang
