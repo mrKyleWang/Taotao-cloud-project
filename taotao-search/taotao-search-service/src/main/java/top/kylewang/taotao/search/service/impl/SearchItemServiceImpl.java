@@ -2,8 +2,6 @@ package top.kylewang.taotao.search.service.impl;
 
 import java.util.List;
 
-import org.apache.solr.client.solrj.SolrServer;
-import org.apache.solr.common.SolrInputDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
