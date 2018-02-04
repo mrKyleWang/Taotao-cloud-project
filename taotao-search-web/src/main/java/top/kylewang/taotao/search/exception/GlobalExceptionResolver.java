@@ -1,24 +1,25 @@
-package com.taotao.search.exception;
+package top.kylewang.taotao.search.exception;
+
+import org.apache.log4j.Logger;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
-import org.springframework.web.servlet.HandlerExceptionResolver;
-import org.springframework.web.servlet.ModelAndView;
-
 /**
  * 全局异常处理器
- * <p>Title: GlobalExceptionResolver</p>
- * <p>Description: </p>
- * <p>Company: www.itcast.cn</p> 
- * @version 1.0
+ * @author Kyle.Wang
+ * 2018/2/4 0004 19:57
  */
-public class GlobalExceptionResolver implements HandlerExceptionResolver{
+@ControllerAdvice
+public class GlobalExceptionResolver{
 
 	private static Logger logger = Logger.getLogger(GlobalExceptionResolver.class);
-	@Override
-	public ModelAndView resolveException(HttpServletRequest request, 
+
+	@ExceptionHandler(value=Exception.class)
+	public ModelAndView resolveException(HttpServletRequest request,
 			HttpServletResponse response, Object handler,
 			Exception e) {
 		//写日志文件

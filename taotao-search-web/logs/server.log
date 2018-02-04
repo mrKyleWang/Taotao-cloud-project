@@ -137,7 +137,7 @@ zookeeper state changed (SyncConnected)
 
 
 [INFO ] 2016-05-27 11:29:08,280 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:527)
-Mapped "{[/search]}" onto public java.lang.String com.taotao.search.controller.SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
+Mapped "{[/search]}" onto public java.lang.String SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
 
 
 [INFO ] 2016-05-27 11:29:08,677 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
@@ -152,10 +152,10 @@ Looking for @ControllerAdvice: WebApplicationContext for namespace 'taotao-searc
 FrameworkServlet 'taotao-search-web': initialization completed in 1792 ms
 
 
-[ERROR] 2016-05-27 11:29:29,112 method:com.taotao.search.exception.GlobalExceptionResolver.resolveException(GlobalExceptionResolver.java:25)
+[ERROR] 2016-05-27 11:29:29,112 method:GlobalExceptionResolver.resolveException(GlobalExceptionResolver.java:25)
 运行时异常
 java.lang.ArithmeticException: / by zero
-	at com.taotao.search.controller.SearchController.searchItem(SearchController.java:39)
+	at SearchController.searchItem(SearchController.java:39)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -323,12 +323,12 @@ zookeeper state changed (SyncConnected)
 
 
 [WARN ] 2016-05-28 11:26:19,149 method:org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.taotao.search.service.SearchService com.taotao.search.controller.SearchController.searchService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchService': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service com.taotao.search.service.SearchService. No provider available for the service com.taotao.search.service.SearchService from the url zookeeper://192.168.25.167:2181/com.alibaba.dubbo.registry.RegistryService?application=taotao-search-web&dubbo=2.5.3&interface=com.taotao.search.service.SearchService&methods=search&pid=6260&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1464405978940 to the consumer 192.168.82.27 use dubbo version 2.5.3
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.taotao.search.service.SearchService SearchController.searchService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchService': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service com.taotao.search.service.SearchService. No provider available for the service com.taotao.search.service.SearchService from the url zookeeper://192.168.25.167:2181/com.alibaba.dubbo.registry.RegistryService?application=taotao-search-web&dubbo=2.5.3&interface=com.taotao.search.service.SearchService&methods=search&pid=6260&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1464405978940 to the consumer 192.168.82.27 use dubbo version 2.5.3
 
 
 [ERROR] 2016-05-28 11:26:19,156 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:502)
 Context initialization failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.taotao.search.service.SearchService com.taotao.search.controller.SearchController.searchService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchService': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service com.taotao.search.service.SearchService. No provider available for the service com.taotao.search.service.SearchService from the url zookeeper://192.168.25.167:2181/com.alibaba.dubbo.registry.RegistryService?application=taotao-search-web&dubbo=2.5.3&interface=com.taotao.search.service.SearchService&methods=search&pid=6260&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1464405978940 to the consumer 192.168.82.27 use dubbo version 2.5.3
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.taotao.search.service.SearchService SearchController.searchService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchService': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service com.taotao.search.service.SearchService. No provider available for the service com.taotao.search.service.SearchService from the url zookeeper://192.168.25.167:2181/com.alibaba.dubbo.registry.RegistryService?application=taotao-search-web&dubbo=2.5.3&interface=com.taotao.search.service.SearchService&methods=search&pid=6260&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1464405978940 to the consumer 192.168.82.27 use dubbo version 2.5.3
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
@@ -359,7 +359,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.taotao.search.service.SearchService com.taotao.search.controller.SearchController.searchService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchService': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service com.taotao.search.service.SearchService. No provider available for the service com.taotao.search.service.SearchService from the url zookeeper://192.168.25.167:2181/com.alibaba.dubbo.registry.RegistryService?application=taotao-search-web&dubbo=2.5.3&interface=com.taotao.search.service.SearchService&methods=search&pid=6260&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1464405978940 to the consumer 192.168.82.27 use dubbo version 2.5.3
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.taotao.search.service.SearchService SearchController.searchService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchService': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Failed to check the status of the service com.taotao.search.service.SearchService. No provider available for the service com.taotao.search.service.SearchService from the url zookeeper://192.168.25.167:2181/com.alibaba.dubbo.registry.RegistryService?application=taotao-search-web&dubbo=2.5.3&interface=com.taotao.search.service.SearchService&methods=search&pid=6260&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1464405978940 to the consumer 192.168.82.27 use dubbo version 2.5.3
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:573)
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
@@ -437,7 +437,7 @@ JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
 
 
 [INFO ] 2016-05-28 11:32:27,548 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:527)
-Mapped "{[/search]}" onto public java.lang.String com.taotao.search.controller.SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
+Mapped "{[/search]}" onto public java.lang.String SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
 
 
 [INFO ] 2016-05-28 11:32:27,868 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
@@ -452,7 +452,7 @@ Looking for @ControllerAdvice: WebApplicationContext for namespace 'taotao-searc
 FrameworkServlet 'taotao-search-web': initialization completed in 761 ms
 
 
-[ERROR] 2016-05-28 11:32:38,947 method:com.taotao.search.exception.GlobalExceptionResolver.resolveException(GlobalExceptionResolver.java:25)
+[ERROR] 2016-05-28 11:32:38,947 method:GlobalExceptionResolver.resolveException(GlobalExceptionResolver.java:25)
 运行时异常
 java.lang.RuntimeException: org.apache.solr.common.SolrException: java.util.concurrent.TimeoutException: Could not connect to ZooKeeper 192.168.25.154:2181,192.168.25.154:2182,192.168.25.154:2183 within 10000 ms
 org.apache.solr.common.SolrException: java.util.concurrent.TimeoutException: Could not connect to ZooKeeper 192.168.25.154:2181,192.168.25.154:2182,192.168.25.154:2183 within 10000 ms
@@ -540,7 +540,7 @@ Caused by: java.util.concurrent.TimeoutException: Could not connect to ZooKeeper
 	at java.lang.Thread.run(Thread.java:745)
 
 
-[ERROR] 2016-05-28 11:32:49,796 method:com.taotao.search.exception.GlobalExceptionResolver.resolveException(GlobalExceptionResolver.java:25)
+[ERROR] 2016-05-28 11:32:49,796 method:GlobalExceptionResolver.resolveException(GlobalExceptionResolver.java:25)
 运行时异常
 java.lang.RuntimeException: org.apache.solr.common.SolrException: java.util.concurrent.TimeoutException: Could not connect to ZooKeeper 192.168.25.154:2181,192.168.25.154:2182,192.168.25.154:2183 within 10000 ms
 org.apache.solr.common.SolrException: java.util.concurrent.TimeoutException: Could not connect to ZooKeeper 192.168.25.154:2181,192.168.25.154:2182,192.168.25.154:2183 within 10000 ms
@@ -765,7 +765,7 @@ zookeeper state changed (SyncConnected)
 
 
 [INFO ] 2016-05-28 11:33:09,958 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:527)
-Mapped "{[/search]}" onto public java.lang.String com.taotao.search.controller.SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
+Mapped "{[/search]}" onto public java.lang.String SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
 
 
 [INFO ] 2016-05-28 11:33:10,413 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
@@ -780,7 +780,7 @@ Looking for @ControllerAdvice: WebApplicationContext for namespace 'taotao-searc
 FrameworkServlet 'taotao-search-web': initialization completed in 2009 ms
 
 
-[ERROR] 2016-05-28 11:34:08,010 method:com.taotao.search.exception.GlobalExceptionResolver.resolveException(GlobalExceptionResolver.java:25)
+[ERROR] 2016-05-28 11:34:08,010 method:GlobalExceptionResolver.resolveException(GlobalExceptionResolver.java:25)
 运行时异常
 java.lang.RuntimeException: org.apache.solr.common.SolrException: java.util.concurrent.TimeoutException: Could not connect to ZooKeeper 192.168.25.154:2181,192.168.25.154:2182,192.168.25.154:2183 within 10000 ms
 org.apache.solr.common.SolrException: java.util.concurrent.TimeoutException: Could not connect to ZooKeeper 192.168.25.154:2181,192.168.25.154:2182,192.168.25.154:2183 within 10000 ms
@@ -1005,7 +1005,7 @@ zookeeper state changed (SyncConnected)
 
 
 [INFO ] 2016-05-28 11:35:31,487 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:527)
-Mapped "{[/search]}" onto public java.lang.String com.taotao.search.controller.SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
+Mapped "{[/search]}" onto public java.lang.String SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
 
 
 [INFO ] 2016-05-28 11:35:31,873 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
@@ -1165,7 +1165,7 @@ zookeeper state changed (SyncConnected)
 
 
 [INFO ] 2016-05-29 08:47:52,041 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:527)
-Mapped "{[/search]}" onto public java.lang.String com.taotao.search.controller.SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
+Mapped "{[/search]}" onto public java.lang.String SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
 
 
 [INFO ] 2016-05-29 08:47:52,423 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
@@ -1317,7 +1317,7 @@ zookeeper state changed (SyncConnected)
 
 
 [INFO ] 2016-05-31 08:18:12,416 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:527)
-Mapped "{[/search]}" onto public java.lang.String com.taotao.search.controller.SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
+Mapped "{[/search]}" onto public java.lang.String SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
 
 
 [INFO ] 2016-05-31 08:18:12,953 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
@@ -1469,7 +1469,7 @@ zookeeper state changed (SyncConnected)
 
 
 [INFO ] 2016-06-01 10:36:49,946 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:527)
-Mapped "{[/search]}" onto public java.lang.String com.taotao.search.controller.SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
+Mapped "{[/search]}" onto public java.lang.String SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
 
 
 [INFO ] 2016-06-01 10:36:50,467 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
@@ -1625,7 +1625,7 @@ zookeeper state changed (SyncConnected)
 
 
 [INFO ] 2016-06-02 08:26:58,276 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:527)
-Mapped "{[/search]}" onto public java.lang.String com.taotao.search.controller.SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
+Mapped "{[/search]}" onto public java.lang.String SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
 
 
 [INFO ] 2016-06-02 08:26:58,740 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
@@ -1777,7 +1777,7 @@ zookeeper state changed (SyncConnected)
 
 
 [INFO ] 2016-06-04 08:10:58,672 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:527)
-Mapped "{[/search]}" onto public java.lang.String com.taotao.search.controller.SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
+Mapped "{[/search]}" onto public java.lang.String SearchController.searchItem(java.lang.String,java.lang.Integer,org.springframework.ui.Model) throws java.lang.Exception
 
 
 [INFO ] 2016-06-04 08:10:59,558 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:532)
