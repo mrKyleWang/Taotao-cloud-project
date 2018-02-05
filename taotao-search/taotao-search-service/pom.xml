@@ -71,6 +71,11 @@
 			<artifactId>pagehelper-spring-boot-starter</artifactId>
 			<version>${pagehelper.version}</version>
 		</dependency>
+		<!--solr-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-solr</artifactId>
+		</dependency>
 		<!-- Apache工具组件 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>

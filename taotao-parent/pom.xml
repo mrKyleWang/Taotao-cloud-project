@@ -35,14 +35,9 @@
 
     <repositories>
         <repository>
-            <!-- Maven 自带的中央仓库使用的Id为central 如果其他的仓库声明也是用该Id
-            就会覆盖中央仓库的配置 --> <id>mvnrepository</id>
-            <name>mvnrepository</name>
-            <url>http://www.mvnrepository.com/</url>
-            <layout>default</layout>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
+            <id>spring-libs-release</id>
+            <name>Spring Releases</name>
+            <url>https://repo.spring.io/libs-release</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
