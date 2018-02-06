@@ -27,6 +27,10 @@ spring:
     password: guest
     publisher-confirms: true
     virtual-host: /
+  data:
+    solr:
+      host: http://127.0.0.1:8080/solr
+
 #mybaits配置
 mybatis:
   type-aliases-package: top.kylewang.taotao.pojo
