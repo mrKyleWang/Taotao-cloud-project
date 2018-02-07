@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>${title}</title>
+	</head>
+	<body>
+		引用模板：<#include "hello.ftl"/>
+		<br>
+		学生的姓名：${stu.name}
+		<br>
+		学生列表：
+		<br>
+		<table border="1">
+			<tr>
+				<th>序号</th>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>家庭住址</th>
+			</tr>
+			<#list stuList as student>
+			<#if student_index % 2 == 0>
+			<tr bgcolor="blue">
+			<#else>
+			<tr bgcolor="red">
+			</#if>
+				<td>${student_index}</td>
+				<td>${student.id}</td>
+				<td>${student.name}</td>
+				<td>${student.age}</td>
+				<td>${student.address}</td>
+			</tr>
+			</#list>
+		</table>
+		<br>
+		当前日期：${date?date}
+		<br>
+		当前时间：${date?time}
+		<br>
+		当前日期和时间：${date?datetime}
+		<br>
+		自定义日期格式：${date?string("yyyy/MM/dd HH:mm:ss")}
+		<br>
+		null值的测试：${mytest!""}
+		<br>
+		null判断：
+		<#if mytest??>
+			mytest不为null,值：${mytest}
+		<#else>
+			mytest为null
+		</#if>
+	</body>
+</html>
