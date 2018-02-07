@@ -1,4 +1,4 @@
-package com.taotao.item.pojo;
+package top.kylewang.taotao.item.pojo;
 
 import com.taotao.pojo.TbItem;
 

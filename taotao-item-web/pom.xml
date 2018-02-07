@@ -1,113 +1,74 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
-		<groupId>com.taotao</groupId>
+		<groupId>top.kylewang.taotao</groupId>
 		<artifactId>taotao-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<groupId>com.taotao</groupId>
+	<modelVersion>4.0.0</modelVersion>
+
 	<artifactId>taotao-item-web</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<dependencies>
+		<!--springMVC-->
 		<dependency>
-			<groupId>com.taotao</groupId>
-			<artifactId>taotao-manager-interface</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- Spring -->
+		<!--freemarker-->
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
+		<!--cloud-eureka-->
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
+		<!--cloud-feign-->
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-feign</artifactId>
 		</dependency>
+		<!--actuator-->
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		<!--test-->
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aspects</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
+		<!--tomcat-->
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jms</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
+		<!-- tomcat-jsp -->
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
-		<!-- JSP相关 -->
+		<!-- servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+		<!-- jstl标签 -->
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jsp-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<!-- dubbo相关 -->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>dubbo</artifactId>
-			<!-- 排除依赖 -->
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.jboss.netty</groupId>
-					<artifactId>netty</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.zookeeper</groupId>
-			<artifactId>zookeeper</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.github.sgroschupf</groupId>
-			<artifactId>zkclient</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-		</dependency>
-		<!-- activeMq客户端 -->
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-all</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.freemarker</groupId>
-			<artifactId>freemarker</artifactId>
-		</dependency>
+
 	</dependencies>
-	<!-- 配置tomcat插件 -->
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
-				<configuration>
-					<port>8086</port>
-					<path>/</path>
-				</configuration>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>

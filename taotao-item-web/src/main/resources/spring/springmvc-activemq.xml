@@ -24,7 +24,7 @@
 	</bean>
 	
 	<!-- 配置消息监听器 -->
-	<bean id="htmlGenListener" class="com.taotao.item.listener.HtmlGenListener"/>
+	<bean id="htmlGenListener" class="top.kylewang.taotao.item.listener.HtmlGenListener"/>
 	<!-- 配置监听容器 -->
 	<!-- 消息监听容器 -->
 	<bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">

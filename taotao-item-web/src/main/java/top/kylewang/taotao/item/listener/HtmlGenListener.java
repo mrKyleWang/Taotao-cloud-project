@@ -1,4 +1,4 @@
-package com.taotao.item.listener;
+package top.kylewang.taotao.item.listener;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
-import com.taotao.item.pojo.Item;
+import top.kylewang.taotao.item.pojo.Item;
 import com.taotao.pojo.TbItem;
 import com.taotao.pojo.TbItemDesc;
 import com.taotao.service.ItemService;
