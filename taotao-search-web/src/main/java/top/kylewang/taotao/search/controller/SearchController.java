@@ -28,7 +28,6 @@ public class SearchController {
 	@RequestMapping("/search")
 	public String searchItem(@RequestParam("q")String queryString, 
 			@RequestParam(defaultValue="1")Integer page, Model model) throws Exception {
-		queryString = new String(queryString.getBytes("iso8859-1"), "utf-8");
 		//调用服务搜索商品信息
 		SearchResult searchResult = searchFeignClient.search(queryString, page, ITEM_ROWS);
 		//向页面传递参数
