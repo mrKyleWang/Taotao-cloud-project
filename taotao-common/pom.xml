@@ -10,9 +10,6 @@
     <artifactId>taotao-common</artifactId>
     <packaging>jar</packaging>
 
-
-
-
     <dependencies>
         <!-- Jackson Json处理工具包 -->
         <dependency>
@@ -26,11 +23,6 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>${servlet-api.version}</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-elasticsearch</artifactId>
-            <version>2.1.9.RELEASE</version>
         </dependency>
     </dependencies>
 </project>
