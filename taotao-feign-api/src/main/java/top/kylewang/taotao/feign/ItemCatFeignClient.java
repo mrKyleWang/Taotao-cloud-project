@@ -20,5 +20,5 @@ public interface ItemCatFeignClient {
      * @return
      */
     @RequestMapping(value = "/item/cat/list")
-    List<EasyUITreeNode> getItemCatList(@RequestParam("parentId")Long parentId);
+    List<EasyUITreeNode> getItemCatList(@RequestParam("parentId") Long parentId);
 }

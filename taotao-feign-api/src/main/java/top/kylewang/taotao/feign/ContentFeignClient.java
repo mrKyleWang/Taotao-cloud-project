@@ -8,6 +8,8 @@ import top.kylewang.taotao.common.pojo.EasyUIDataGridResult;
 import top.kylewang.taotao.common.pojo.TaotaoResult;
 import top.kylewang.taotao.pojo.TbContent;
 
+import java.util.List;
+
 /**
  * @author Kyle.Wang
  * 2018/1/27 0027 13:14
@@ -29,7 +31,7 @@ public interface ContentFeignClient {
      * @return
      */
     @RequestMapping("/content/query/list")
-    EasyUIDataGridResult getContentList(@RequestParam("categoryId") Long categoryId);
+    List<TbContent> getContentList(@RequestParam("categoryId") Long categoryId);
 
     /**
      * 列表查询

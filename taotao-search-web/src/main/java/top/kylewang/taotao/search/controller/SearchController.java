@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import top.kylewang.taotao.search.feign.SearchFeignClient;
+import top.kylewang.taotao.feign.SearchFeignClient;
 
 import top.kylewang.taotao.common.pojo.SearchResult;
 

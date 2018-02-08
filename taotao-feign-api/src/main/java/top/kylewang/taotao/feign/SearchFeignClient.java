@@ -1,4 +1,4 @@
-package top.kylewang.taotao.search.feign;
+package top.kylewang.taotao.feign;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,5 +22,7 @@ public interface SearchFeignClient {
      */
     @RequestMapping("/search")
     SearchResult search(@RequestParam("queryString") String queryString, @RequestParam("page")int page, @RequestParam("rows")int rows);
+
+
 
 }

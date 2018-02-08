@@ -1,4 +1,4 @@
-package top.kylewang.taotao.portal.feign;
+package top.kylewang.taotao.feign;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

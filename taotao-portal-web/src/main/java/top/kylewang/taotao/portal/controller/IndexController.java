@@ -6,8 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import top.kylewang.taotao.common.utils.JsonUtils;
+import top.kylewang.taotao.feign.ContentFeignClient;
 import top.kylewang.taotao.pojo.TbContent;
-import top.kylewang.taotao.portal.feign.ContentFeignClient;
 import top.kylewang.taotao.portal.pojo.Ad1Node;
 
 import java.util.ArrayList;

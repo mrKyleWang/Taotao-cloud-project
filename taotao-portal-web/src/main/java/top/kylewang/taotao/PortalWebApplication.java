@@ -1,4 +1,4 @@
-package top.kylewang.taotao.search;
+package top.kylewang.taotao;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,14 +14,14 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @SpringBootApplication
 @EnableFeignClients
 @EnableEurekaClient
-public class SearchWebApplication extends SpringBootServletInitializer {
+public class PortalWebApplication extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(SearchWebApplication.class);
+        return application.sources(PortalWebApplication.class);
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(SearchWebApplication.class, args);
+        SpringApplication.run(PortalWebApplication.class, args);
     }
 }

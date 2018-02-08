@@ -24,7 +24,7 @@ public interface ItemFeignClient {
      * @return
      */
     @RequestMapping(value = "/item/list",method = RequestMethod.GET)
-    EasyUIDataGridResult getItemList(@RequestParam("page") int page, @RequestParam("rows")int rows);
+    EasyUIDataGridResult getItemList(@RequestParam("page") int page, @RequestParam("rows") int rows);
 
     /**
      * 添加
@@ -41,7 +41,7 @@ public interface ItemFeignClient {
      * @return
      */
     @RequestMapping("/item/getItemById")
-    TbItem getItemById(@RequestParam("itemId")Long itemId);
+    TbItem getItemById(@RequestParam("itemId") Long itemId);
 
 
     /**
@@ -50,5 +50,5 @@ public interface ItemFeignClient {
      * @return
      */
     @RequestMapping("/item/getItemDescById")
-    TbItemDesc getItemDescById(@RequestParam("itemId")Long itemId);
+    TbItemDesc getItemDescById(@RequestParam("itemId") Long itemId);
 }

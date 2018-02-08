@@ -22,4 +22,5 @@ public class SearchController {
         return searchService.search(queryString,page,rows);
     }
 
+
 }
