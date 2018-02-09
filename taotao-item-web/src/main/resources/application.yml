@@ -1,0 +1,27 @@
+#模板生成路径
+HTML_OUT_PATH: D:/temp/freemarker/item/
+
+server:
+  port: 9017
+spring:
+  application:
+    name: taotao-item-web
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/jsp/
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password@localhost:9009/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+
+
+
+

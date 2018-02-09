@@ -1,54 +1,45 @@
 package top.kylewang.taotao.item.listener;
 
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
+import top.kylewang.taotao.feign.ItemFeignClient;
+import top.kylewang.taotao.item.pojo.Item;
+import top.kylewang.taotao.pojo.TbItem;
+import top.kylewang.taotao.pojo.TbItemDesc;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.jms.Message;
-import javax.jms.MessageListener;
-import javax.jms.TextMessage;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
-
-import top.kylewang.taotao.item.pojo.Item;
-import com.taotao.pojo.TbItem;
-import com.taotao.pojo.TbItemDesc;
-import com.taotao.service.ItemService;
-
-import freemarker.template.Configuration;
-import freemarker.template.Template;
-
 /**
  * 监听商品添加事件，生成商品静态页面
- * <p>Title: HtmlGenListener</p>
- * <p>Description: </p>
- * <p>Company: www.itcast.cn</p> 
- * @version 1.0
+ * @author Kyle.Wang
+ * 2018/2/8 0008 21:44
  */
-public class HtmlGenListener implements MessageListener {
+
+public class HtmlGenListener {
 
 	@Autowired
-	private ItemService itemService;
+	private ItemFeignClient itemFeignClient;
 	@Autowired
 	private FreeMarkerConfigurer freeMarkerConfigurer;
 	@Value("${HTML_OUT_PATH}")
 	private String HTML_OUT_PATH;
-	
-	@Override
-	public void onMessage(Message message) {
+
+	@RabbitListener(queues="item-add-topic")
+	public void onMessage(String strItemId) {
 		try {
-			// 1、创建一个MessageListener接口的实现类
 			// 2、从message中取商品id
-			TextMessage textMessage = (TextMessage) message;
-			String strItemId = textMessage.getText();
 			Long itemId = new Long(strItemId);
 			// 3、查询商品基本消息、商品描述。
-			TbItem tbItem = itemService.getItemById(itemId);
+			TbItem tbItem = itemFeignClient.getItemById(itemId);
 			Item item = new Item(tbItem);
-			TbItemDesc tbItemDesc = itemService.getItemDescById(itemId);
+			TbItemDesc tbItemDesc = itemFeignClient.getItemDescById(itemId);
 			//创建数据集
 			Map data = new HashMap<>();
 			data.put("item", item);

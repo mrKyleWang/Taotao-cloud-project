@@ -1,6 +1,7 @@
 package top.kylewang.taotao.item.pojo;
 
-import com.taotao.pojo.TbItem;
+import top.kylewang.taotao.pojo.TbItem;
+
 
 public class Item extends TbItem {
 
