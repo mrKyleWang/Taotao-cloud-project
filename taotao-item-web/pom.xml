@@ -10,6 +10,11 @@
 	<artifactId>taotao-item-web</artifactId>
 	<packaging>jar</packaging>
 	<dependencies>
+		<dependency>
+			<groupId>top.kylewang.taotao</groupId>
+			<artifactId>taotao-feign-api</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 		<!--springMVC-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -34,6 +39,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!--cloud-bus-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
 		<!--test-->
 		<dependency>
