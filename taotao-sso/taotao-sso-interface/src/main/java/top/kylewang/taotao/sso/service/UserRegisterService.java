@@ -1,7 +1,7 @@
-package com.taotao.sso.service;
+package top.kylewang.taotao.sso.service;
 
-import com.taotao.common.pojo.TaotaoResult;
-import com.taotao.pojo.TbUser;
+import top.kylewang.taotao.common.pojo.TaotaoResult;
+import top.kylewang.taotao.pojo.TbUser;
 
 public interface UserRegisterService {
 

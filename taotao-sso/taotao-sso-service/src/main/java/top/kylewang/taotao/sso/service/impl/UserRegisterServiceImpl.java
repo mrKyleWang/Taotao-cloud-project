@@ -1,20 +1,19 @@
-package com.taotao.sso.service.impl;
+package top.kylewang.taotao.sso.service.impl;
 
 import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
-import com.taotao.common.pojo.TaotaoResult;
-import com.taotao.mapper.TbUserMapper;
-import com.taotao.pojo.TbUser;
-import com.taotao.pojo.TbUserExample;
-import com.taotao.pojo.TbUserExample.Criteria;
-import com.taotao.sso.service.UserRegisterService;
+import top.kylewang.taotao.common.pojo.TaotaoResult;
+import top.kylewang.taotao.mapper.TbUserMapper;
+import top.kylewang.taotao.pojo.TbUser;
+import top.kylewang.taotao.pojo.TbUserExample;
+import top.kylewang.taotao.pojo.TbUserExample.Criteria;
+import top.kylewang.taotao.sso.service.UserRegisterService;
 
 /**
  * 用户注册处理Service

@@ -29,6 +29,6 @@
 		<property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.taotao.mapper" />
+		<property name="basePackage" value="top.kylewang.taotao.mapper" />
 	</bean>
 </beans>

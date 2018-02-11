@@ -1,4 +1,4 @@
-package com.taotao.freemarker;
+package top.kylewang.taotao.freemarker;
 
 public class Student {
 

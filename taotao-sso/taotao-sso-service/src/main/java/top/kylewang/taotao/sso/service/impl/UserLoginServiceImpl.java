@@ -1,4 +1,4 @@
-package com.taotao.sso.service.impl;
+package top.kylewang.taotao.sso.service.impl;
 
 import java.util.List;
 import java.util.UUID;
@@ -9,14 +9,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
-import com.taotao.common.pojo.TaotaoResult;
-import com.taotao.common.utils.JsonUtils;
-import com.taotao.jedis.JedisClient;
-import com.taotao.mapper.TbUserMapper;
-import com.taotao.pojo.TbUser;
-import com.taotao.pojo.TbUserExample;
-import com.taotao.pojo.TbUserExample.Criteria;
-import com.taotao.sso.service.UserLoginService;
+import top.kylewang.taotao.common.pojo.TaotaoResult;
+import top.kylewang.taotao.common.utils.JsonUtils;
+import top.kylewang.taotao.jedis.JedisClient;
+import top.kylewang.taotao.mapper.TbUserMapper;
+import top.kylewang.taotao.pojo.TbUser;
+import top.kylewang.taotao.pojo.TbUserExample;
+import top.kylewang.taotao.pojo.TbUserExample.Criteria;
+import top.kylewang.taotao.sso.service.UserLoginService;
 
 /**
  * 用户登录处理Service
