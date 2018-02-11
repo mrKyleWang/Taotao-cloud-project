@@ -1,22 +1,21 @@
 package top.kylewang.taotao.sso.service.impl;
 
-import java.util.List;
-import java.util.UUID;
-
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
-
 import top.kylewang.taotao.common.pojo.TaotaoResult;
 import top.kylewang.taotao.common.utils.JsonUtils;
-import top.kylewang.taotao.jedis.JedisClient;
 import top.kylewang.taotao.mapper.TbUserMapper;
 import top.kylewang.taotao.pojo.TbUser;
 import top.kylewang.taotao.pojo.TbUserExample;
 import top.kylewang.taotao.pojo.TbUserExample.Criteria;
+import top.kylewang.taotao.sso.jedis.JedisClient;
 import top.kylewang.taotao.sso.service.UserLoginService;
+
+import java.util.List;
+import java.util.UUID;
 
 /**
  * 用户登录处理Service
