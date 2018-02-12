@@ -26,7 +26,7 @@ public class UserRegisterCotroller {
 
     @RequestMapping(value="/user/register", method=RequestMethod.POST)
     @ResponseBody
-    public TaotaoResult regitsterUser(TbUser user) {
+    public TaotaoResult registerUser(TbUser user) {
         return userRegisterService.createUser(user);
     }
 }
