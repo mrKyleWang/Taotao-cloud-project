@@ -3,10 +3,7 @@ SESSION_PRE: SESSION
 #session的过期时间，默认为30分钟
 SESSION_EXPIRE=: 800
 server:
-  port: 9011
-
-REDIS_ITEM_KEY: REDIS_ITEM
-REDIS_ITEM_EXPIRE: 18000
+  port: 9018
 
 spring:
   application:
@@ -23,14 +20,6 @@ spring:
   redis:
     host: localhost
     port: 6379
-  #rabbitMQ TODO 更换host
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-    publisher-confirms: true
-    virtual-host: /
 #mybaits配置
 mybatis:
   type-aliases-package: top.kylewang.taotao.pojo

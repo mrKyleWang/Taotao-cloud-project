@@ -18,7 +18,7 @@ public class UserRegisterCotroller {
     @Autowired
     private UserRegisterService userRegisterService;
 
-    @RequestMapping(value="/user/check/{param}/{type}", method= RequestMethod.GET)
+    @RequestMapping(value="/user/check/{param}/{type}", method= RequestMethod.POST)
     @ResponseBody
     public TaotaoResult checkUserInfo(@PathVariable String param, @PathVariable Integer type) {
         return userRegisterService.checkUserInfo(param,type);
