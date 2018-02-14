@@ -1,55 +1,48 @@
-package com.taotao.sso.controller;
+package top.kylewang.taotao.sso.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import top.kylewang.taotao.common.pojo.TaotaoResult;
+import top.kylewang.taotao.common.utils.CookieUtils;
+import top.kylewang.taotao.feign.UserFeignClient;
+import top.kylewang.taotao.pojo.TbUser;
 
-import com.taotao.common.pojo.TaotaoResult;
-import com.taotao.common.utils.CookieUtils;
-import com.taotao.common.utils.JsonUtils;
-import com.taotao.pojo.TbUser;
-import com.taotao.sso.service.UserLoginService;
-import com.taotao.sso.service.UserRegisterService;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * 用户管理Controller
- * <p>Title: UserController</p>
- * <p>Description: </p>
- * <p>Company: www.itcast.cn</p> 
- * @version 1.0
+ * @author Kyle.Wang
+ * 2018/2/14 0014 19:13
  */
+
 @Controller
 public class UserController {
 
 	@Autowired
-	private UserRegisterService userRegisterService;
-	@Autowired
-	private UserLoginService userLoginService;
-	
+	private UserFeignClient userFeignClient;
+
 	@Value("${COOKIE_TOKEN_KEY}")
 	private String COOKIE_TOKEN_KEY;
 	
 	@RequestMapping(value="/user/check/{param}/{type}", method=RequestMethod.GET)
 	@ResponseBody
 	public TaotaoResult checkUserInfo(@PathVariable String param, @PathVariable Integer type) {
-		TaotaoResult result = userRegisterService.checkUserInfo(param, type);
+		TaotaoResult result = userFeignClient.checkUserInfo(param, type);
 		return result;
 	}
 	
 	@RequestMapping(value="/user/register", method=RequestMethod.POST)
 	@ResponseBody
 	public TaotaoResult regitsterUser(TbUser user) {
-		TaotaoResult taotaoResult = userRegisterService.createUser(user);
+		TaotaoResult taotaoResult = userFeignClient.registerUser(user);
 		return taotaoResult;
 	}
 	
@@ -57,7 +50,7 @@ public class UserController {
 	@ResponseBody
 	public TaotaoResult userLogin(String username, String password,
 			HttpServletRequest request, HttpServletResponse response) {
-		TaotaoResult taotaoResult = userLoginService.login(username, password);
+		TaotaoResult taotaoResult = userFeignClient.userLogin(username, password);
 		//取token
 		String token = taotaoResult.getData().toString();
 		//设置cookie
@@ -83,7 +76,7 @@ public class UserController {
 	@RequestMapping(value="/user/token/{token}")
 	@ResponseBody
 	public Object getUserByToken(@PathVariable String token, String callback) {
-		TaotaoResult result = userLoginService.getUserByToken(token);
+		TaotaoResult result = userFeignClient.getUserByToken(token);
 		if (StringUtils.isNotBlank(callback)) {
 			//设置要包装的数据
 			MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(result);
