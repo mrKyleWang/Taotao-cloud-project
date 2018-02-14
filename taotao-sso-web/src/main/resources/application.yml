@@ -1,0 +1,26 @@
+COOKIE_TOKEN_KEY: TT_TOKEN
+
+server:
+  port: 9019
+spring:
+  application:
+    name: taotao-sso-web
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/jsp/
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password@localhost:9009/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+
+
+
+
