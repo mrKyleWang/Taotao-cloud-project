@@ -26,7 +26,7 @@ public class UserLoginController {
 
     @RequestMapping(value="/user/token/{token}")
     @ResponseBody
-    public Object getUserByToken(@PathVariable String token) {
+    public TaotaoResult getUserByToken(@PathVariable String token) {
        return userLoginService.getUserByToken(token);
     }
 

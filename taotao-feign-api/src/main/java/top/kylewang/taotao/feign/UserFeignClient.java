@@ -32,7 +32,7 @@ public interface UserFeignClient {
      */
     @RequestMapping(value = "/user/token/{token}")
     @ResponseBody
-    Object getUserByToken(@PathVariable String token);
+    TaotaoResult getUserByToken(@PathVariable String token);
 
     /**
      * 检查用户信息
