@@ -2,7 +2,7 @@
 HTML_OUT_PATH: D:/temp/freemarker/item/
 
 server:
-  port: 9017
+  port: 9016
 spring:
   application:
     name: taotao-item-web

@@ -4,7 +4,7 @@ COOKIE_CART_EXPIRE: 604800
 COOKIE_CART_KEY: TT_CART
 
 server:
-  port: 9014
+  port: 9019
 spring:
   application:
     name: taotao-cart-web

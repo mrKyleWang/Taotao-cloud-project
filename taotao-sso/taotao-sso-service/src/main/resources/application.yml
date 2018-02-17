@@ -3,7 +3,7 @@ SESSION_PRE: SESSION
 #session的过期时间，默认为30分钟
 SESSION_EXPIRE=: 800
 server:
-  port: 9018
+  port: 9017
 
 spring:
   application:

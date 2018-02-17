@@ -1,7 +1,7 @@
 ITEM_ROWS: 60
 
 server:
-  port: 9016
+  port: 9015
 spring:
   application:
     name: taotao-search-web
