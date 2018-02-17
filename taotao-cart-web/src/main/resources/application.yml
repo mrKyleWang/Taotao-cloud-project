@@ -1,0 +1,29 @@
+#购物车有效期,默认为7天
+COOKIE_CART_EXPIRE: 604800
+#购物车在cookie中保存的key
+COOKIE_CART_KEY: TT_CART
+
+server:
+  port: 9014
+spring:
+  application:
+    name: taotao-cart-web
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/jsp/
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password@localhost:9009/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+
+
+
+
