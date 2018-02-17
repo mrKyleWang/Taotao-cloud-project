@@ -7,10 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import top.kylewang.taotao.cart.feign.ItemFeignClient;
 import top.kylewang.taotao.common.pojo.TaotaoResult;
 import top.kylewang.taotao.common.utils.CookieUtils;
 import top.kylewang.taotao.common.utils.JsonUtils;
+import top.kylewang.taotao.feign.ItemFeignClient;
 import top.kylewang.taotao.pojo.TbItem;
 
 import javax.servlet.http.HttpServletRequest;
